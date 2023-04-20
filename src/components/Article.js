@@ -1,15 +1,13 @@
 import React from "react";
 
-const ArticleList = (props) => {
+function Article({ title, date = "January 1, 1970", preview }) {
   return (
-        <article>
-          <h3>{props.title}</h3>
-          <small>{props.date || "January 1, 1970"}</small>
-          <p>{props.preview}</p>
-        </article>
-  
-
+    <article>
+      <h3>{title}</h3>
+      <small>{date}</small>
+      <p>{preview}</p>
+    </article>
   );
-};
+}
 
-export default ArticleList;
+export default Article;

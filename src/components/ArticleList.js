@@ -1,14 +1,18 @@
-import React from "react";
+import Article from "./Article";
+import blogData from "../data/blog";
 
-const ArticleList = (props) => {
-  return (
-        <article>
-          <h3>{props.title}</h3>
-          <small>{props.date || "January 1, 1970"}</small>
-          <p>{props.preview}</p>
-        </article>
-
-  )
-};
+function ArticleList() {
+  const allArticles = blogData.posts.map((arr) => {
+    return (
+      <Article
+        key={arr.id}
+        title={arr.title}
+        date={arr.date}
+        preview={arr.preview}
+      />
+    );
+  });
+  return <main>{allArticles}</main>;
+}
 
 export default ArticleList;
